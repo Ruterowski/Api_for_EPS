@@ -38,7 +38,7 @@ async def GetRecognizePieces(file:  UploadFile = File(...)):
             cls_id = int(box.cls[0].item())
             label = model.names[cls_id]
             conf = float(box.conf[0].item())
-            xyxy = box.xyxy[0].tolist()  # [x1, y1, x2, y2]
+            xyxy = box.xyxy[0].tolist()
             detections.append({
                 "label": label,
                 "confidence": conf,
